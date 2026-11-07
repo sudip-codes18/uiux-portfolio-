@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudip Site</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600;700&family=Gochi+Hand&family=Indie+Flower&family=Handlee&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        <link rel="icon" href="https://www.image2url.com/r2/default/images/1786379049205-15d8fd8d-6940-4964-ab70-1ef283186fb5.jpg" type="image/x-icon">
+
+
+    <style>
+        /* Sticky notes dragging */
+        .draggable-note {
+            touch-action: none;
+        }
+        .draggable-note:active {
+            cursor: grabbing;
+            z-index: 50;
+        }
+
+        /* Marker Box Animation */
+        .marker-box {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+        }
+        
+        .marker-box::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -5px;
+            right: -5px;
+            bottom: -2px;
+            border: 2px solid #572333; 
+            border-radius: 8px; 
+            width: 0%;
+            height: calc(100% + 4px);
+            opacity: 0;
+            animation: drawBox 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            animation-delay: 0.5s; 
+        }
+
+        @keyframes drawBox {
+            0% { width: 0%; opacity: 1; }
+            100% { width: calc(100% + 10px); opacity: 1; }
+        }
+    </style>
+</head>
+
+<body class="bg-[#F7F3F3] min-h-screen overflow-x-hidden">
+
+    <div class="max-w-3xl mx-auto px-4 md:px-8 py-6">
+
+        <!-- TOP SECTION: Intro Text + Sticky Notes Over It -->
+        <div class="relative w-full mb-10 mt-4 pt-10 sm:pt-6">
+            
+            <!-- STICKY NOTES (Top Section) -->
+            <div class="absolute inset-0 pointer-events-none z-10" id="notes-container">
+                
+                <!-- Note 1: Yellow (Hi there!) -->
+                <div class="draggable-note pointer-events-auto absolute top-0 right-0 sm:right-10 bg-[#FBFAA7] w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] p-2 flex flex-col items-center justify-center text-center rotate-[6deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                    <span class="text-2xl mb-1">👋</span>
+                    <p class="font-['Gochi_Hand'] text-[#572333] text-sm sm:text-base font-bold leading-tight">Hi there!</p>
+                </div>
+
+                <!-- Note 2: Green (Scroll down for more!) -->
+                <div class="draggable-note pointer-events-auto absolute top-[110px] right-[20px] sm:right-[120px] bg-[#A4FCA4] w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] p-2 flex items-center justify-center text-center rotate-[-5deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                    <p class="font-['Gochi_Hand'] text-[#572333] text-sm sm:text-base font-bold leading-tight">Scroll down for more!</p>
+                </div>
+
+            </div>
+
+            <!-- The Intro Text -->
+            <h1 class="text-4xl md:text-5xl font-bold text-[#572333] py-5 leading-tight relative z-0">
+                I'm Sudip,<br>
+                <span class="marker-box">UI/UX Designer</span>
+            </h1>
+
+            <div class="font-['Gochi_Hand'] text-xl py-5 leading-relaxed relative z-0">
+                I craft beautiful digital experience that
+                solves real problems. with 2+ years of experience
+                in web development and UI/UX design. <br>
+
+                <button
+                    class="text-[#572333] bg-white hover:scale-110 duration-300 mt-6 shadow-xl cursor-pointer border-white w-32 h-14 border rounded-2xl font-bold">
+                    Let's Talk
+                </button>
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <section class="mt-8">
+            <h1 class="text-[#572333] py-5 font-bold text-3xl"> projects </h1>
+
+            <span class="font-['Gochi_Hand'] text-lg tracking-wide leading-9 block mb-4">
+                Some of my recent projects and Recent studies
+            </span>
+
+            <div class="bg-white rounded-xl flex flex-col w-full h-auto overflow-hidden shadow-sm mb-6">
+                <div
+                    class="bg-[#a7a2e8] flex justify-center items-center p-8 w-full transition-transform duration-300 hover:scale-[1.02] cursor-pointer">
+                    <div class="bg-white p-6 rounded-3xl shadow-2xl max-w-full">
+                        <img src="https://cdn.phototourl.com/member/2026-11-07-5294a26f-bbc1-474b-bdde-280407d96dba.png"
+                            alt="Preview" class="rounded-xl w-full h-auto object-cover" />
+                    </div>
+                </div>
+                <div class="p-5 md:p-6">
+                    <h1 class="font-bold text-lg text-[#572333] mb-3"> E-commerce platform Redesign </h1>
+
+                    <p class="font-['Gochi_Hand'] leading-relaxed mb-4"> Complete Redesigning of a leading e-commerce
+                        platform with figma , specially focusing on user experience and conversion optimization.
+                        Increased checkout completion rate by 31% through the intution design improvement. </p>
+
+                    <div class="text-[#572333] flex flex-wrap gap-3">
+                        <button class="border rounded-3xl px-4 py-1 text-center cursor-pointer hover:bg-gray-50 transition">product design </button>
+                        <button class="border rounded-3xl px-4 py-1 text-center cursor-pointer hover:bg-gray-50 transition">UX Research </button>
+                        <button class="border rounded-3xl px-4 py-1 text-center cursor-pointer hover:bg-gray-50 transition">UI Design </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-6">
+            <div class="p-5 bg-white rounded-3xl shadow-xl w-full h-full">
+                <img src="https://cdn.phototourl.com/member/2026-11-07-bb4a71c3-fdb7-4198-b98e-6b45389985e0.png"
+                    alt="My design" class="w-full rounded-xl mb-4">
+
+                <h1 class="font-bold text-lg text-[#572333] mb-3"> Mobile Banking Application </h1>
+
+                <p class="font-['Gochi_Hand'] leading-relaxed mb-4"> Designed and prototyped a secured, user mobile
+                    friendly mobile app with advanced features. Also considered as the "best fin tech design" </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 text-[#572333] gap-3">
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">accessibility</button>
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">Fin tech</button>
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">mobile design</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-6">
+            <div class="p-5 bg-white rounded-3xl shadow-xl w-full h-full">
+                <img src="https://cdn.phototourl.com/member/2026-11-07-b472b5e0-93b6-4737-847d-449aef6544a0.png"
+                    alt="My design-2" class="w-full rounded-xl mb-4">
+
+                <p class="font-['Gochi_Hand'] leading-relaxed mb-4"> Designed this modern and minimal website UI in
+                    Figma, focusing on clean layouts, typography, and visual consistency. As a UI/UX designer, I enjoy
+                    creating beautiful, intuitive, and user-friendly digital experiences. </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 text-[#572333] gap-3">
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition"> UI/UX </button>
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">component</button>
+                    <button class="border rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">clean design</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section class="mb-10">
+            <div class="p-5 md:p-8 bg-white rounded-3xl shadow-xl space-y-6 w-full h-full">
+                <h1 class="font-bold text-3xl text-[#572333]"> About Me </h1>
+
+                <p class="font-['Gochi_Hand'] text-lg"> A glimpse into my skills and personality </p>
+
+                <img class="w-full h-auto rounded-2xl shadow-2xl object-cover max-h-[500px]"
+                    src="https://cdn.phototourl.com/member/2026-11-07-31d1f848-de6b-4fb3-bef1-75d5334d09b6.jpg"
+                    alt="My pic">
+
+                <!-- INTRO SECTION WITH NEW STICKY NOTES -->
+                <div class="relative pt-16 pb-4">
+                    
+                    <!-- The 4 Cards Container -->
+                    <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-10">
+                        
+                        <!-- Note 1: Orange -->
+                        <div class="draggable-note pointer-events-auto absolute top-0 left-0 bg-[#FDE2A6] w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] p-2 flex items-center justify-center text-center rotate-[-5deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                            <p class="font-['Gochi_Hand'] text-[#572333] text-xs sm:text-sm font-bold leading-tight">Multiple projects experience</p>
+                        </div>
+
+                        <!-- Note 2: Yellow -->
+                        <div class="draggable-note pointer-events-auto absolute top-2 left-[95px] sm:left-[120px] bg-[#FBFAA7] w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] p-2 flex items-center justify-center text-center rotate-[3deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                            <p class="font-['Gochi_Hand'] text-[#572333] text-xs sm:text-sm font-bold leading-tight">Versatile skill pool</p>
+                        </div>
+
+                        <!-- Note 3: Blue -->
+                        <div class="draggable-note pointer-events-auto absolute top-4 left-[190px] sm:left-[240px] bg-[#9BE1FA] w-[90px] h-[90px] sm:w-[110px] sm:h-[110px] p-2 flex flex-col items-center justify-center text-center rotate-[6deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                            <span class="text-lg leading-none mb-1">📍</span>
+                            <p class="font-['Gochi_Hand'] text-[#572333] text-xs sm:text-sm font-bold leading-tight">Nepal</p>
+                        </div>
+
+                        <!-- Note 4: Green -->
+                        <div class="draggable-note pointer-events-auto absolute top-[85px] left-[20px] sm:left-[50px] bg-[#A4FCA4] w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] p-2 flex items-center justify-center text-center rotate-[-3deg] shadow-[3px_5px_15px_rgba(0,0,0,0.15)] cursor-grab select-none">
+                            <p class="font-['Gochi_Hand'] text-[#572333] text-xs sm:text-sm font-bold leading-tight">Available for hiring & relocation</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Intro Text -->
+                    <h1 class="font-bold text-3xl text-[#572333] mb-3 relative z-0"> Intro </h1>
+                    <p class="font-['Gochi_Hand'] text-[#572333] leading-relaxed relative z-0 mt-16 sm:mt-20"> 
+                        Hey, I'm Sudip Tamang, A 18 years old guy from itahari-8, sunsari. I am in the field of designing (UI/UX), coding (web development, DEVOPS) since 1.5, approximately 2 years. I am interested in building , adding colors on it and then selling it. 
+                    </p>
+                </div>
+                <!-- END INTRO SECTION -->
+
+                <!-- Skills Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 text-[#572333] font-['Shantell_Sans'] gap-3 pt-4">
+                    <button class="border border-[#d1c7cb] rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition"> UI/UX </button>
+                    <button class="border border-[#d1c7cb] rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition"> coding </button>
+                    <button class="border border-[#d1c7cb] rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">Animation </button>
+                    <button class="border border-[#d1c7cb] rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition">Art</button>
+                    <button class="border border-[#d1c7cb] rounded-xl px-2 py-1 cursor-pointer hover:bg-gray-50 transition"> Doodle </button>
+                </div>
+
+                <div class="text-[#572333] pt-4 border-t border-gray-100">
+                    <h1 class="font-bold text-3xl text-[#572333] mb-4"> Experience </h1>
+
+                    <span class="font-bold text-xl text-[#572333]"> Digital Pathsala </span>
+
+                    <p class="font-['Gochi_Hand'] text-[#572333] mt-2 leading-relaxed">
+                        MERN stack developer 2025 - present <br>
+                        worked on many projects as well as 1(one) international project.
+                    </p>
+
+                    <h1 class="font-bold text-3xl mt-8 mb-4"> Links </h1>
+                    <div class="flex flex-wrap gap-8 items-center mb-10">
+                        <a class="hover:text-red-500 transition duration-300" href="https://www.linkedin.com/in/sudip-tamang-55581b393/" target="_blank" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin text-3xl"></i>
+                        </a>
+
+                        <a class="hover:text-red-500 transition duration-300" href="https://github.com/sudip-codes18" target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github text-3xl"></i>
+                        </a>
+
+                        <a class="hover:text-red-500 transition duration-300" href="https://mail.google.com/mail/?view=cm&fs=1&to=sudipcreates3@gmail.com" target="_blank" aria-label="Email">
+                            <i class="fa-solid fa-envelope text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="bg-[#572333] w-full mt-10">
+        <footer class="text-base md:text-xl text-white font-['Gochi_Hand'] text-center px-4 py-6 leading-relaxed">
+            @2026 Sudip Tamang. All rights reserved. <br class="block sm:hidden"> 
+            Crafted by 
+            <a href="https://sudiptamang.vercel.app/" target="_blank" class="underline hover:text-gray-300 transition duration-300">
+                Sudip Tamang
+            </a>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT FOR DRAGGING NOTES -->
+    <script>
+        const notes = document.querySelectorAll('.draggable-note');
+
+        notes.forEach(note => {
+            let isDragging = false;
+            let startX, startY, initialLeft, initialTop;
+
+            note.addEventListener('pointerdown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                startY = e.clientY;
+                initialLeft = note.offsetLeft;
+                initialTop = note.offsetTop;
+                e.preventDefault(); 
+            });
+
+            document.addEventListener('pointermove', (e) => {
+                if (!isDragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                note.style.left = `${initialLeft + dx}px`;
+                note.style.top = `${initialTop + dy}px`;
+            });
+
+            document.addEventListener('pointerup', () => {
+                isDragging = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
